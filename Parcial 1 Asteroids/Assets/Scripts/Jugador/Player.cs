@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
             transform.Translate(velocidad * Time.deltaTime, 0, 0, Space.Self);
         }
         //Movimiento a hacia Arriba.
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.S))
         {
             transform.Translate(0, -velocidad * Time.deltaTime, 0, Space.Self);
         }
