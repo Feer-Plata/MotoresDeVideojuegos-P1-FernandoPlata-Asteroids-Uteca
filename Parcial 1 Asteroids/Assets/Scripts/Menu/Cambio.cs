@@ -15,4 +15,9 @@ public class Cambio : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }
+    public void Back2Menu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
 }

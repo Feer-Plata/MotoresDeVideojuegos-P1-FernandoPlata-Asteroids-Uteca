@@ -809,9 +809,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1409258175}
-        m_TargetAssemblyTypeName: Cambio, Assembly-CSharp
-        m_MethodName: Finalizar
+      - m_Target: {fileID: 1409258174}
+        m_TargetAssemblyTypeName: ManagerPanels, Assembly-CSharp
+        m_MethodName: Reanudar
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1233,9 +1233,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1409258174}
-        m_TargetAssemblyTypeName: ManagerPanels, Assembly-CSharp
-        m_MethodName: Cerrar
+      - m_Target: {fileID: 1409258175}
+        m_TargetAssemblyTypeName: Cambio, Assembly-CSharp
+        m_MethodName: Finalizar
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

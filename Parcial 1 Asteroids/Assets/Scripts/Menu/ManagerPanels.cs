@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class ManagerPanels : MonoBehaviour
 {
+    public GameObject PanelPrincipal;
     //[SerializeField] private GameObject botonPausa;
     [SerializeField] private GameObject menuPausa;
 
@@ -44,10 +45,35 @@ public class ManagerPanels : MonoBehaviour
         SceneManager.LoadScene(1);
 
     }
+    public void MenuControles()
+    {
+        juegoPausado = false;
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(2);
+
+    }
 
     public void Cerrar()
     {
         Application.Quit();
     }
 
+    //public void ActivatePanelPrincipal()
+    //{
+    //    PanelPrincipal.SetActive(true);
+    //}
+    //public void DeactivatePanelPrincipal()
+    //{
+    //    PanelPrincipal.SetActive(false);
+    //}
+    //public void ActivateControlPanel()
+    //{
+    //    PanelControles.SetActive(true);
+    //    DeactivateControlPanel();
+    //}
+    //public void DeactivateControlPanel()
+    //{
+    //    PanelControles.SetActive(false);
+    //    ActivateControlPanel();
+    //}
 }
