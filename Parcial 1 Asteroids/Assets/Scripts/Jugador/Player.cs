@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public int velocidadJugador;
     public int vidaJugador;
     public Slider barraVidaJugador;
+    public Rigidbody2D curva;
 
     //Atributos de disparo de jugador.
     public GameObject bala;
@@ -68,7 +69,7 @@ public class Player : MonoBehaviour
     }
     public void BajarvidaJugador()
     {
-        if (Input.GetKey(KeyCode.O))
+        if (Input.GetKeyDown(KeyCode.O))
         {
             vidaJugador--;
         }
