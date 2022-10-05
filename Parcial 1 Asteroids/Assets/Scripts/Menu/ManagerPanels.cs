@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class ManagerPanels : MonoBehaviour
 {
     public GameObject PanelPrincipal;
+    public GameObject PanelControles;
     //[SerializeField] private GameObject botonPausa;
     [SerializeField] private GameObject menuPausa;
 
@@ -58,22 +59,22 @@ public class ManagerPanels : MonoBehaviour
         Application.Quit();
     }
 
-    //public void ActivatePanelPrincipal()
-    //{
-    //    PanelPrincipal.SetActive(true);
-    //}
-    //public void DeactivatePanelPrincipal()
-    //{
-    //    PanelPrincipal.SetActive(false);
-    //}
-    //public void ActivateControlPanel()
-    //{
-    //    PanelControles.SetActive(true);
-    //    DeactivateControlPanel();
-    //}
-    //public void DeactivateControlPanel()
-    //{
-    //    PanelControles.SetActive(false);
-    //    ActivateControlPanel();
-    //}
+    public void ActivatePanelPrincipal()
+    {
+        PanelPrincipal.SetActive(true);
+    }
+    public void DeactivatePanelPrincipal()
+    {
+        PanelPrincipal.SetActive(false);
+    }
+    public void ActivateControlPanel()
+    {
+        PanelControles.SetActive(true);
+        DeactivateControlPanel();
+    }
+    public void DeactivateControlPanel()
+    {
+        PanelControles.SetActive(false);
+        ActivateControlPanel();
+    }
 }
