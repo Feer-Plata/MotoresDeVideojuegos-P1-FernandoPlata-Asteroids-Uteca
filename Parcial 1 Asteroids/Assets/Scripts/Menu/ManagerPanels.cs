@@ -43,8 +43,8 @@ public class ManagerPanels : MonoBehaviour
     {
         juegoPausado = false;
         Time.timeScale = 1f;
+        ScoreInit.score = 0;
         SceneManager.LoadScene(1);
-
     }
     public void MenuControles()
     {

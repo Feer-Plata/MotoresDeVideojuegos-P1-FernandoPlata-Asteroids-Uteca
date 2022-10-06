@@ -6,7 +6,9 @@ public class Cambio : MonoBehaviour
 {
     public void Iniciar()
     {
+        //Escena juego
         SceneManager.LoadScene(1);
+        ScoreInit.score = 0;
 
     }
 
@@ -17,6 +19,7 @@ public class Cambio : MonoBehaviour
     }
     public void Back2Menu()
     {
+        //Escena menu principal
         SceneManager.LoadScene(0);
     }
 

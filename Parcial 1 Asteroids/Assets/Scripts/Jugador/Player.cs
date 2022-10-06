@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
         CheckLife();
         DisparoJugador();
         BajarvidaJugador();
+        SubirScore();
     }
     public void MovimientoJugador()
     {
@@ -75,6 +76,13 @@ public class Player : MonoBehaviour
         }
 
     }
-
+    public void SubirScore()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            ScoreInit.score++;
+            Debug.Log("Sumando al score: ");
+        }
+    }
 
 }
