@@ -10,7 +10,9 @@ public class Player : MonoBehaviour
     public int velocidadJugador;
     public int vidaJugador;
     public Slider barraVidaJugador;
-    public Rigidbody2D curva;
+
+    public Vector3 rotacionAsteroides;
+    public float speedAsteorid;
 
     //Atributos de disparo de jugador.
     public GameObject bala;
@@ -18,7 +20,9 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        LimitarMapa();
         MovimientoJugador();
+        //RotacionNave();
         CheckLife();
         DisparoJugador();
         BajarvidaJugador();
@@ -47,6 +51,32 @@ public class Player : MonoBehaviour
             transform.Translate(0, -velocidadJugador * Time.deltaTime, 0, Space.Self);
         }
     }
+    public void RotacionNave()
+    {
+        //Rotacion Horizontal
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            rotacionAsteroides.z *= -1;
+            transform.Rotate(0, 0, -90);
+        }
+        else if (Input.GetKeyDown(KeyCode.A))
+        {
+            rotacionAsteroides.z *= 1;
+            transform.Rotate(0, 0, 90);
+        }
+        //Rotacion Vertical
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            //rotacionAsteroides.z *= -1;
+            transform.Rotate(0, 0, 0);
+        }
+        else if (Input.GetKeyDown(KeyCode.S))
+        {
+            //rotacionAsteroides.z *= 1;
+            transform.Rotate(0, 0, -180);
+        }
+        //transform.Rotate(rotacionAsteroides * speedAsteorid * Time.deltaTime);
+    }
 
     public void CheckLife()
     {
@@ -67,6 +97,28 @@ public class Player : MonoBehaviour
             Instantiate(bala, posicionesBala[1].position, Quaternion.identity);
         }
 
+    }
+
+    public void LimitarMapa()
+    {
+        //Teletransporte Horizontal
+        if (this.transform.position.x < -9)
+        {
+            this.transform.position = new Vector3(9, transform.position.y, 0);
+        }
+        else if (this.transform.position.x >= 9)
+        {
+            this.transform.position = new Vector3(-9, transform.position.y, 0);
+        }
+        //Teletransporte Vertical
+        if (this.transform.position.y < -5)
+        {
+            this.transform.position = new Vector3(transform.position.x, 5, 0);
+        }
+        else if (this.transform.position.y >= 5)
+        {
+            this.transform.position = new Vector3(transform.position.x, -5, 0);
+        }
     }
     public void BajarvidaJugador()
     {

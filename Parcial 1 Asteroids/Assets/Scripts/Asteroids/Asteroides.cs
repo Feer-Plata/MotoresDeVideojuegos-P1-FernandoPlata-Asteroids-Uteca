@@ -4,22 +4,40 @@ using UnityEngine;
 
 public class Asteroides : MonoBehaviour
 {
+    //Atributos de asteroides
+    public int lifeAst1 = 1;
+    public int lifeAst2 = 3;
+    public int lifeAst3 = 5;
+    
     //Atributos
-    public Vector3 rotacionAsteroides;
-    public float speedAsteorid;
+    public bool PuedeSpawnear = true;
+    public GameObject Aste1;
+    public GameObject Aste2;
+    public GameObject Aste3;
 
-    // Update is called once per frame
-    void Update()
+
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            rotacionAsteroides.z *= -1;
-        }
+        CheckLife();
+        Destroy(gameObject, 3f);
+    }
 
-        if (Input.GetKeyDown(KeyCode.E))
+    public void CheckLife()                                                //Checa si el asteoride tiene vida
+    {
+        if (lifeAst1 <= 0)
         {
-            rotacionAsteroides.z *= 1;
+            ScoreInit.score++;                                            //Le suma uno al score.
+            Destroy(Aste1);                                               //Si no tiene vida, lo destruye.
         }
-        transform.Rotate(rotacionAsteroides * speedAsteorid * Time.deltaTime);
+        else if (lifeAst2 <= 0)
+        {
+            ScoreInit.score++;
+            Destroy(Aste2);
+        }
+        else if (lifeAst3 <= 0)
+        {
+            ScoreInit.score++;
+            Destroy(Aste3);
+        }
     }
 }
