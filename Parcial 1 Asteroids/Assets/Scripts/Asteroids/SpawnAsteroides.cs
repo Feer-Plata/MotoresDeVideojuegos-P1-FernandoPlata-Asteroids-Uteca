@@ -5,28 +5,30 @@ using UnityEngine;
 public class SpawnAsteroides : MonoBehaviour
 {
     //Atributos
-    public bool PuedeSpawnear = true;
-    public GameObject Aste1;
-    public GameObject Aste2;
-    public GameObject Aste3;
-
+    public bool puedeSpawnear = true;
+    public List<GameObject> Asteroides;
 
     private void Update()
     {
-        if (PuedeSpawnear)
-        {
-            StartCoroutine(SpawnAsteroids(2f));
-        }
-        //CheckLife();
-        Destroy(gameObject, 5f);
+        RespawnCora();
     }
+    // Update is called once per frame
 
-    IEnumerator SpawnAsteroids(float time)
+    private void RespawnCora()
     {
-        Instantiate(Aste1, new Vector3(-10.59f, -4.3f, 0), Quaternion.identity);
-        PuedeSpawnear = false;
+        if (puedeSpawnear)
+        {
+            StartCoroutine(Timing(1.5F));
+
+        }
+    }
+    IEnumerator Timing(float time)
+    {
+        int randomIndex = Random.Range(0, Asteroides.Count);
+        Instantiate(Asteroides[randomIndex]);
+        puedeSpawnear = false;
         yield return new WaitForSeconds(time);
-        PuedeSpawnear = true;
+        puedeSpawnear = true;
     }
 
 }

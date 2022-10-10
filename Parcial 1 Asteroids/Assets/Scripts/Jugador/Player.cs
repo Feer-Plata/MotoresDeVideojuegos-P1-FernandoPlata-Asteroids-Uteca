@@ -9,15 +9,16 @@ public class Player : MonoBehaviour
     //Atributos de jugador.
     public int velocidadJugador;
     public int vidaJugador;
-    public Slider barraVidaJugador;
+    int restHearts = 0;
 
-    public Vector3 rotacionAsteroides;
-    public float speedAsteorid;
+    public Vector3 rotPlayer;
+    public float speedRotPlayer;
+
+    public  UIVidaPlayer Corazones;
 
     //Atributos de disparo de jugador.
     public GameObject bala;
     public List<Transform> posicionesBala;
-
     void Update()
     {
         LimitarMapa();
@@ -56,12 +57,12 @@ public class Player : MonoBehaviour
         //Rotacion Horizontal
         if (Input.GetKeyDown(KeyCode.D))
         {
-            rotacionAsteroides.z *= -1;
+            rotPlayer.z *= -1;
             transform.Rotate(0, 0, -90);
         }
         else if (Input.GetKeyDown(KeyCode.A))
         {
-            rotacionAsteroides.z *= 1;
+            rotPlayer.z *= 1;
             transform.Rotate(0, 0, 90);
         }
         //Rotacion Vertical
@@ -92,9 +93,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-
             Instantiate(bala, posicionesBala[0].position, Quaternion.identity);
-            Instantiate(bala, posicionesBala[1].position, Quaternion.identity);
         }
 
     }
@@ -120,11 +119,15 @@ public class Player : MonoBehaviour
             this.transform.position = new Vector3(transform.position.x, -5, 0);
         }
     }
+
     public void BajarvidaJugador()
     {
         if (Input.GetKeyDown(KeyCode.O))
         {
+            
             vidaJugador--;
+            restHearts +=1;
+            Corazones.LifePlayer(restHearts);
         }
 
     }
@@ -133,8 +136,13 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.L))
         {
             ScoreInit.score++;
-            Debug.Log("Sumando al score: ");
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        vidaJugador--;
+        restHearts += 1;
+        Corazones.LifePlayer(restHearts);
+    }
 }

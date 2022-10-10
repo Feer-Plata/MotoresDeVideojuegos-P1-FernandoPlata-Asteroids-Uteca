@@ -884,7 +884,11 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
+<<<<<<< Updated upstream
       maxColor: {r: 0.28773582, g: 0.872912, b: 1, a: 1}
+=======
+      maxColor: {r: 0, g: 1, b: 0.77201605, a: 1}
+>>>>>>> Stashed changes
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

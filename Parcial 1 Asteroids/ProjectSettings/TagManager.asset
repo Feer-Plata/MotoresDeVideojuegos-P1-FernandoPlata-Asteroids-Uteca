@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Cuadro
   - Enemy
-  - Ast1
+  - BulletPlayer
   layers:
   - Default
   - TransparentFX

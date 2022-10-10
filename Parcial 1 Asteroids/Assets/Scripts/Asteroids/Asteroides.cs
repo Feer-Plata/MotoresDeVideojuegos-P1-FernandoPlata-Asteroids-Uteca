@@ -19,7 +19,7 @@ public class Asteroides : MonoBehaviour
     private void Update()
     {
         CheckLife();
-        Destroy(gameObject, 3f);
+        Destroy(gameObject, 5f);
     }
 
     public void CheckLife()                                                //Checa si el asteoride tiene vida
@@ -27,17 +27,29 @@ public class Asteroides : MonoBehaviour
         if (lifeAst1 <= 0)
         {
             ScoreInit.score++;                                            //Le suma uno al score.
-            Destroy(Aste1);                                               //Si no tiene vida, lo destruye.
+            DestroyImmediate(Aste1, true);                                               //Si no tiene vida, lo destruye.
         }
         else if (lifeAst2 <= 0)
         {
             ScoreInit.score++;
-            Destroy(Aste2);
+            DestroyImmediate(Aste2, true);
         }
         else if (lifeAst3 <= 0)
         {
             ScoreInit.score++;
-            Destroy(Aste3);
+            DestroyImmediate(Aste3, true);
         }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "BulletPlayer")
+        {
+            Destroy(gameObject);
+            ScoreInit.score++;
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        Destroy(gameObject);
     }
 }

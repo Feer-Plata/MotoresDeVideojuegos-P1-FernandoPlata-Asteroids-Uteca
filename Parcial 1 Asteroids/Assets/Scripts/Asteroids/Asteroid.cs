@@ -7,7 +7,6 @@ public class Asteroid : MonoBehaviour
     //Atributos
     public int lifeAsteroid;
     public int speedRotAsteroid;
-
     // Update is called once per frame
     void Update()
     {
@@ -33,8 +32,4 @@ public class Asteroid : MonoBehaviour
         }
     }
 
-    public void RotacionAsteoride()
-    {
-        transform.Translate(speedRotAsteroid * Time.deltaTime, 0, 0);
-    }
 }

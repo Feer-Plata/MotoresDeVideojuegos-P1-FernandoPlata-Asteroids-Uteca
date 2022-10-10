@@ -9,20 +9,19 @@ public class MovBala : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(gameObject, 15f);
+        Destroy(gameObject, 4f);
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        this.transform.Translate(-speedShoot * Time.deltaTime, 0, 0, Space.World);
+        this.transform.Translate(0, speedShoot * Time.deltaTime, 0, Space.World);
 
     }
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Asteroid")
+        if (other.tag == "Enemy")
         {
             Destroy(gameObject);
         }
