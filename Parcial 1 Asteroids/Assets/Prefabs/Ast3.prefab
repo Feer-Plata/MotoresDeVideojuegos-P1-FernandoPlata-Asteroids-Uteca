@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 3619668300103982055}
   - component: {fileID: 6947470278388309994}
   - component: {fileID: 4787801951828923821}
+  - component: {fileID: 6744061447058480210}
   m_Layer: 0
   m_Name: Ast3
   m_TagString: Enemy
@@ -105,7 +106,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9046384257842107075}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a718c138b20419b499c3d92b17e6ff7a, type: 3}
   m_Name: 
@@ -141,10 +142,10 @@ Rigidbody:
   m_Mass: 3
   m_Drag: 1
   m_AngularDrag: 0
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 120
+  m_Constraints: 72
   m_CollisionDetection: 0
 --- !u!135 &4787801951828923821
 SphereCollider:
@@ -159,6 +160,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.9657444
   m_Center: {x: 0, y: -0.21285418, z: 0.22400533}
+--- !u!114 &6744061447058480210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9046384257842107075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c94b20ce1cbac014a980c72998f6f4b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velAst: 5
 --- !u!1 &9046384257842162923
 GameObject:
   m_ObjectHideFlags: 0

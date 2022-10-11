@@ -18,7 +18,7 @@ public class SpawnAsteroides : MonoBehaviour
     {
         if (puedeSpawnear)
         {
-            StartCoroutine(Timing(1.5F));
+            StartCoroutine(Timing(1F));
 
         }
     }

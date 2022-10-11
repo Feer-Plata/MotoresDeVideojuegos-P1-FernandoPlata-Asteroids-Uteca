@@ -19,7 +19,7 @@ public class Asteroides : MonoBehaviour
     private void Update()
     {
         CheckLife();
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 15f);
     }
 
     public void CheckLife()                                                //Checa si el asteoride tiene vida
