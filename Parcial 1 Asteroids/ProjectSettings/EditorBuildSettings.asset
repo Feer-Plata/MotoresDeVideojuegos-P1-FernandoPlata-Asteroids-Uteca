@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Game.unity
     guid: 6684f871eb0d20f43b8aef1d3bcf7fb7
   - enabled: 1
-    path: Assets/Scenes/CTRLMenu.unity
-    guid: e525e77eeb86286479315d1d84c9999d
+    path: Assets/Scenes/CTRL.unity
+    guid: 55a34209bffbeec4baf4904e67a78d28
   - enabled: 1
     path: Assets/Scenes/DeathScene.unity
     guid: e0585ba0257a8c24f9849067e9dbdef5
