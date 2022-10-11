@@ -11,8 +11,8 @@ public class Player : MonoBehaviour
     public int vidaJugador;
     int restHearts = 0;
 
-    public Vector3 rotPlayer;
-    public float speedRotPlayer;
+    public float angularSpeed;
+    private float horizontal;
 
     public  UIVidaPlayer Corazones;
 
@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     {
         LimitarMapa();
         MovimientoJugador();
-        //RotacionNave();
+        RotacionNave();
         CheckLife();
         DisparoJugador();
         BajarvidaJugador();
@@ -54,29 +54,11 @@ public class Player : MonoBehaviour
     }
     public void RotacionNave()
     {
-        //Rotacion Horizontal
-        if (Input.GetKeyDown(KeyCode.D))
+        if (horizontal == 0)
         {
-            rotPlayer.z *= -1;
-            transform.Rotate(0, 0, -90);
+            return;
         }
-        else if (Input.GetKeyDown(KeyCode.A))
-        {
-            rotPlayer.z *= 1;
-            transform.Rotate(0, 0, 90);
-        }
-        //Rotacion Vertical
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            //rotacionAsteroides.z *= -1;
-            transform.Rotate(0, 0, 0);
-        }
-        else if (Input.GetKeyDown(KeyCode.S))
-        {
-            //rotacionAsteroides.z *= 1;
-            transform.Rotate(0, 0, -180);
-        }
-        //transform.Rotate(rotacionAsteroides * speedAsteorid * Time.deltaTime);
+        transform.Rotate(0, 0, -angularSpeed * horizontal * Time.deltaTime);
     }
 
     public void CheckLife()

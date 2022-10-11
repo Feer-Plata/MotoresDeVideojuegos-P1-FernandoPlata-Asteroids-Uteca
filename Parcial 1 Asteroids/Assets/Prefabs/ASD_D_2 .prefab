@@ -149,9 +149,9 @@ MonoBehaviour:
   lifeAst2: 3
   lifeAst3: 5
   PuedeSpawnear: 1
-  Aste1: {fileID: 1268135634198702521, guid: a59e1cf828bf2f4409bf5359c2800d84, type: 3}
+  Aste1: {fileID: 4878683356916263146, guid: b163f928384041a45a37e8a9a0948229, type: 3}
   Aste2: {fileID: 1170682042360138571}
-  Aste3: {fileID: 9046384257842107075, guid: 16181915812109547b50ba595d40b13a, type: 3}
+  Aste3: {fileID: 2406691891089628061, guid: f70ea772ccbac95468f46dc621609384, type: 3}
 --- !u!54 &2440195341673186266
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d5dda1db3089df40942f128ec2fa5d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velAst: 4
+  velAst: 3
 --- !u!1 &1170682042360143605
 GameObject:
   m_ObjectHideFlags: 0

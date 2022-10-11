@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fcbe76673498246a62cbb40ea1dcc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velAst: 2
+  velAst: 6
 --- !u!1 &429290227259890086
 GameObject:
   m_ObjectHideFlags: 0
