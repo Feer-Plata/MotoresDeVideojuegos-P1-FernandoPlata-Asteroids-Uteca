@@ -14,7 +14,7 @@ public class Cambio : MonoBehaviour
 
     public void Finalizar()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
+        //UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }
     public void Back2Menu()
